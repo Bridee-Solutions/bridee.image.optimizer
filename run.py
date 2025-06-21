@@ -3,7 +3,7 @@ from app import create_app
 import os
 
 load_dotenv()
-PORT = int(os.getenv('PORT'), 8080)
+PORT = int(os.getenv('PORT', 8080))
 IS_DEBUG = os.getenv('DEBUG', 'False').lower() == "true"
 
 app = create_app()
