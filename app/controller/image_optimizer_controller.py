@@ -1,6 +1,6 @@
-from flask import request
+from flask import request, Response
 import app.service.image_optimizer_service as service
 
-def optimize_image():
+def optimize_image() -> Response:
     image = request.files["image"]
-    service.optimize_image(image)
+    return service.optimize_image(image)
